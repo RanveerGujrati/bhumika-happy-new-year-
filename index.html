@@ -4,202 +4,69 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy New Year Bhumika ❤️</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
-
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:'Poppins',sans-serif;
-  background:#0b0b0f;
-  color:#fff;
-  overflow:hidden;
-}
+body{font-family:'Poppins',sans-serif;background:#0b0b0f;color:#fff;overflow:hidden}
 
-/* LOCK SCREEN */
-.lock{
-  position:fixed;inset:0;
-  background:linear-gradient(135deg,#141e30,#243b55);
-  display:flex;align-items:center;justify-content:center;
-  z-index:50;
-}
-.lock-box{
-  background:rgba(255,255,255,.15);
-  padding:40px;
-  border-radius:20px;
-  text-align:center;
-  backdrop-filter:blur(12px);
-}
-.lock-box h2{
-  font-family:'Great Vibes',cursive;
-  font-size:2.5rem;
-}
-.lock-box input{
-  margin-top:15px;
-  padding:12px 20px;
-  border-radius:30px;
-  border:none;
-  font-size:1rem;
-  text-align:center;
-}
-.lock-box button{
-  margin-top:20px;
-  padding:10px 35px;
-  border:none;
-  border-radius:30px;
-  cursor:pointer;
-  background:linear-gradient(to right,#ff758c,#ff7eb3);
-  color:#000;
-}
+/* LOCK */
+.lock{position:fixed;inset:0;background:linear-gradient(135deg,#141e30,#243b55);display:flex;align-items:center;justify-content:center;z-index:50}
+.lock-box{background:rgba(255,255,255,.15);padding:40px;border-radius:22px;text-align:center;backdrop-filter:blur(14px)}
+.lock-box h2{font-family:'Great Vibes',cursive;font-size:2.6rem}
+.lock-box input{margin-top:12px;padding:12px 20px;border-radius:30px;border:none;font-size:1rem;text-align:center}
+.lock-box button{margin-top:20px;padding:10px 30px;border:none;border-radius:30px;background:linear-gradient(to right,#ff758c,#ff7eb3);cursor:pointer}
 
 /* SLIDER */
-.slider{
-  display:flex;
-  width:200vw;
-  height:100vh;
-  transition:transform 1s ease;
-}
-section{
-  width:100vw;height:100vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
-.slide1{
-  background:linear-gradient(135deg,#000428,#004e92);
-}
-.slide2{
-  background:linear-gradient(135deg,#2c003e,#000);
-}
+.slider{display:flex;width:200vw;height:100vh;transition:transform 1.2s cubic-bezier(.77,0,.18,1)}
+section{width:100vw;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.slide1{background:linear-gradient(135deg,#000428,#004e92)}
+.slide2{background:linear-gradient(135deg,#2c003e,#000)}
 
-/* PHOTO */
-.photo{
-  width:220px;height:220px;
-  border-radius:50%;
-  object-fit:cover;
-  box-shadow:0 0 40px rgba(255,255,255,.5);
-  margin-bottom:25px;
-}
-
-/* TEXT */
-h1{
-  font-family:'Great Vibes',cursive;
-  font-size:3.5rem;
-}
-.next{
-  margin-top:35px;
-  padding:12px 40px;
-  border:none;
-  border-radius:30px;
-  background:linear-gradient(to right,#ff9966,#ff5e62);
-  cursor:pointer;
-}
+.photo{width:220px;height:220px;border-radius:50%;object-fit:cover;background:#fff;margin-bottom:25px;box-shadow:0 0 50px rgba(255,255,255,.45)}
+h1{font-family:'Great Vibes',cursive;font-size:3.6rem}
+.next{margin-top:40px;padding:12px 38px;border:none;border-radius:30px;background:linear-gradient(to right,#ff9966,#ff5e62);cursor:pointer}
 
 /* ENVELOPE */
-.envelope{
-  width:160px;height:100px;
-  background:#fff;
-  color:#000;
-  border-radius:10px;
-  font-size:2.5rem;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  animation:float 3s ease-in-out infinite;
-}
-.envelope.hide{
-  opacity:0;
-  transform:scale(.6);
-}
+.envelope{width:160px;height:100px;background:#fff;color:#000;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:2.4rem;cursor:pointer;box-shadow:0 20px 45px rgba(0,0,0,.5);animation:float 3s ease-in-out infinite;transition:.6s}
+.envelope.hide{opacity:0;transform:scale(.6)}
 
 /* LETTER */
-.letter{
-  position:fixed;
-  top:50%;left:50%;
-  transform:translate(-50%,-50%) scaleX(0);
-  transform-origin:left;
-  width:90vw;
-  max-width:760px;
-  height:80vh;
-  background:#f8f1e7;
-  color:#2b1b12;
-  border-radius:20px;
-  padding:40px;
-  box-shadow:0 40px 80px rgba(0,0,0,.5);
-  opacity:0;
-  transition:1s;
-  overflow:auto;
-  z-index:20;
-}
-.letter.open{
-  transform:translate(-50%,-50%) scaleX(1);
-  opacity:1;
-}
-.typing{
-  font-size:1.1rem;
-  line-height:1.9;
-  white-space:pre-line;
-}
-.signature{
-  margin-top:30px;
-  font-family:'Great Vibes',cursive;
-  font-size:2.3rem;
-}
+.letter{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scaleX(0);transform-origin:left;width:90vw;max-width:760px;height:80vh;background:#f8f1e7;color:#2b1b12;border-radius:22px;box-shadow:0 40px 90px rgba(0,0,0,.45);padding:40px;z-index:20;transition:1.2s;opacity:0;overflow:auto}
+.letter.open{transform:translate(-50%,-50%) scaleX(1);opacity:1}
+.typing{font-size:1.15rem;line-height:1.9;white-space:pre-line}
+.signature{margin-top:30px;font-family:'Great Vibes',cursive;font-size:2.3rem}
 
 /* HEARTS */
-.heart{
-  position:absolute;
-  width:25px;height:25px;
-  background:pink;
-  clip-path:polygon(50% 0%,61% 14%,75% 14%,87% 25%,87% 38%,75% 50%,50% 75%,25% 50%,13% 38%,13% 25%,25% 14%,39% 14%);
-  animation:floatHearts 6s linear infinite;
-}
+.heart{position:absolute;width:25px;height:25px;background:pink;clip-path:polygon(50% 0%,61% 14%,75% 14%,87% 25%,87% 38%,75% 50%,50% 75%,25% 50%,13% 38%,13% 25%,25% 14%,39% 14%);animation:floatHearts 6s linear infinite}
 
-@keyframes float{
-  50%{transform:translateY(-12px)}
-}
-@keyframes floatHearts{
-  0%{transform:translateY(100vh);opacity:0}
-  20%{opacity:1}
-  100%{transform:translateY(-10vh);opacity:0}
-}
+@keyframes float{50%{transform:translateY(-12px)}}
+@keyframes floatHearts{0%{transform:translateY(100vh);opacity:0}20%{opacity:1}100%{transform:translateY(-10vh);opacity:0}}
 
-@media(max-width:600px){
-  h1{font-size:2.6rem}
-  .letter{padding:25px}
-}
+@media(max-width:600px){h1{font-size:2.6rem}.letter{padding:25px}}
 </style>
 </head>
 <body>
 
-<!-- LOCK -->
 <div class="lock" id="lock">
   <div class="lock-box">
     <h2>For Bhumika 💖</h2>
     <p>Enter the special date</p>
     <input type="password" id="pass" placeholder="••••••">
-    <br>
-    <button onclick="unlock()">Open</button>
+    <br><button onclick="unlock()">Open</button>
   </div>
 </div>
 
-<!-- SLIDER -->
 <div class="slider" id="slider">
   <section class="slide1">
-    <img src="photo.jpg" class="photo">
+    <img src="photo.jpg" class="photo" alt="Bhumika">
     <h1>Happy New Year, Bhumika</h1>
     <button class="next" onclick="nextSlide()">Next ➜</button>
   </section>
-
   <section class="slide2">
     <div class="envelope" id="envelope" onclick="openLetter()">💌</div>
   </section>
 </div>
 
-<!-- LETTER -->
 <div class="letter" id="letter">
   <div class="typing" id="typing"></div>
   <div class="signature">— Ranveer</div>
@@ -208,69 +75,46 @@ h1{
 <div id="hearts"></div>
 
 <script>
-const slider = document.getElementById('slider');
-const lock = document.getElementById('lock');
-const pass = document.getElementById('pass');
-const envelope = document.getElementById('envelope');
-const letter = document.getElementById('letter');
-const typingBox = document.getElementById('typing');
-const hearts = document.getElementById('hearts');
+const slider=document.getElementById('slider');
+const lock=document.getElementById('lock');
+const pass=document.getElementById('pass');
+const envelope=document.getElementById('envelope');
+const letter=document.getElementById('letter');
+const typingBox=document.getElementById('typing');
+const hearts=document.getElementById('hearts');
 
-const message = `As this new year begins, I want you to know something straight from my heart.
+const message=`As this new year begins, I want you to know something straight from my heart.
 
 Even though we are miles apart and met through Instagram, you slowly became someone I genuinely care about.
 
-Every conversation and every laugh made me realize that distance never decides the depth of a connection.
+Every conversation, every shared laugh made me realize that distance never decides the depth of a connection.
 
-I don’t know what the future holds, but I do know this —
-I value you, I respect you, and I’m grateful for you.
+I don’t know what the future holds, but I do know this — I value you, I respect you, and I’m grateful for your presence in my life.
 
-One day this distance will be just a story we smile about.
+One day this distance will just be a story we smile about.
 
 Happy New Year, Bhumika 🤍`;
 
 function unlock(){
-  if(pass.value.trim().toLowerCase() === '8 march'){
+  if(pass.value.trim().toLowerCase()==='8 march'){
     lock.style.display='none';
-  }else{
-    alert('Wrong password 💔');
-  }
+  }else{alert('Wrong password 💔')}
 }
 
-function nextSlide(){
-  slider.style.transform='translateX(-100vw)';
-}
+function nextSlide(){slider.style.transform='translateX(-100vw)'}
 
 function openLetter(){
   envelope.classList.add('hide');
-  setTimeout(()=>{
-    letter.classList.add('open');
-    typeText();
-    startHearts();
-  },600);
+  setTimeout(()=>{letter.classList.add('open');typeText();startHearts()},600);
 }
 
 function typeText(){
-  typingBox.innerHTML='';
-  let i=0;
-  function t(){
-    if(i<message.length){
-      typingBox.innerHTML += message.charAt(i);
-      i++;
-      setTimeout(t,40);
-    }
-  }
-  t();
+  typingBox.innerHTML='';let i=0;
+  (function t(){if(i<message.length){typingBox.innerHTML+=message.charAt(i++);setTimeout(t,40)}})();
 }
 
 function startHearts(){
-  setInterval(()=>{
-    const h=document.createElement('div');
-    h.className='heart';
-    h.style.left=Math.random()*100+'vw';
-    hearts.appendChild(h);
-    setTimeout(()=>h.remove(),7000);
-  },500);
+  setInterval(()=>{const h=document.createElement('div');h.className='heart';h.style.left=Math.random()*100+'vw';hearts.appendChild(h);setTimeout(()=>h.remove(),7000)},500);
 }
 </script>
 
